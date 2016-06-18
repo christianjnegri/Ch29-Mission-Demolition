@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Slingshot : MonoBehaviour {
-
+	static public Slingshot S;
 	public GameObject prefabProjectile;
 	public float velocityMult = 4f;
 	public bool ______________;
@@ -34,6 +34,7 @@ public class Slingshot : MonoBehaviour {
 		}
 	}
 	void Awake() {
+		S = this;
 		Transform launchPointTrans = transform.Find ("LaunchPoint");
 		launchPoint = launchPointTrans.gameObject;
 		launchPoint.SetActive (false);
